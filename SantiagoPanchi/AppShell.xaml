@@ -15,7 +15,7 @@
             Title="All Notes"
             ContentTemplate="{DataTemplate views:AllNotesPage}"
             Route="AllNotePage"
-            Icon="Notes.jpg" />
+            Icon="{OnPlatform 'icon_catalog2.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
 
         <ShellContent
             Title="About"
@@ -30,15 +30,12 @@
 
 
     <TabBar>
-        <ShellContent
-            Title="Notes"
-            ContentTemplate="{DataTemplate views:AllNotesPage}"
-            Icon="{OnPlatform 'icon_catalog.png', MacCatalyst='icon_notes_ios.png'}" />
+        <ShellContent Title="About" ContentTemplate="{DataTemplate views:AboutPage}" />
 
-        <ShellContent
-            Title="About"
-            ContentTemplate="{DataTemplate views:AboutPage}"
-            Icon="{OnPlatform 'icon_user.png', iOS='icon_user.png', MacCatalyst='icon_about_ios.png'}" />
+        <ShellContent Title="Notas"  ContentTemplate="{DataTemplate views:AllNotesPage}" />
+
+
+
     </TabBar>
 
 </Shell>
