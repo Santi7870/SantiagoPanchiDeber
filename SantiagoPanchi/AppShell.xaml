@@ -15,7 +15,7 @@
             Title="All Notes"
             ContentTemplate="{DataTemplate views:AllNotesPage}"
             Route="AllNotePage"
-            Icon="{OnPlatform 'icon_catalog2.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
+            Icon="icon_catalog2.png" />
 
         <ShellContent
             Title="About"

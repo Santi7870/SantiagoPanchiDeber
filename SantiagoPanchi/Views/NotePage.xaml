@@ -7,7 +7,6 @@
 
     <VerticalStackLayout Spacing="20" Margin="20">
 
-        <!-- Note Editor -->
         <Editor x:Name="TextEditor"
                 Placeholder="Enter your note"
                 Text="{Binding Text}"
@@ -18,10 +17,8 @@
                 TextColor="Black"
                 PlaceholderColor="Silver" />
 
-        <!-- Grid for buttons -->
         <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
 
-            <!-- Save Button -->
             <Button Text="Save"
                     Grid.Column="0"
                     BackgroundColor="White"
@@ -31,7 +28,6 @@
                     Padding="10"
                     Clicked="SaveButton_Clicked" />
 
-            <!-- Delete Button -->
             <Button Text="Delete"
                     Grid.Column="1"
                     BackgroundColor="Silver"

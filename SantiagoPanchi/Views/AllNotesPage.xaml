@@ -11,7 +11,6 @@
                      IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}" />
     </ContentPage.ToolbarItems>
 
-    <!-- Display notes in a list -->
     <CollectionView x:Name="notesCollection"
                     ItemsSource="{Binding Notes}"
                     Margin="20"
@@ -19,12 +18,10 @@
                     SelectionChanged="notesCollection_SelectionChanged"
                     BackgroundColor="black">
 
-        <!-- Designate how the collection of items are laid out -->
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Vertical" ItemSpacing="15" />
         </CollectionView.ItemsLayout>
 
-        <!-- Define the appearance of each item in the list -->
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <Frame BorderColor="White"
@@ -34,7 +31,6 @@
                        BackgroundColor="Black"
                        Margin="5">
                     <StackLayout>
-                        <!-- Title of the note -->
                         <Label Text="{Binding Text}" 
                                FontSize="20" 
                                FontAttributes="Bold" 
@@ -42,7 +38,6 @@
                                LineBreakMode="WordWrap" 
                                HorizontalOptions="Start" />
 
-                        <!-- Date of the note -->
                         <Label Text="{Binding Date}" 
                                FontSize="14" 
                                TextColor="Silver" 

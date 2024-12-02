@@ -12,16 +12,8 @@
     <ScrollView>
         <VerticalStackLayout Spacing="20" Margin="0" HorizontalOptions="Center">
 
-            <!-- Header: Profile Icon and Name -->
             <StackLayout HorizontalOptions="Center" Spacing="10">
-                <!-- Profile Image -->
-                <Image Source="profile_icon.jpg"
-                       HeightRequest="120"
-                       WidthRequest="120"
-                       Aspect="AspectFill"
-                       HorizontalOptions="Center" />
 
-                <!-- Name and Title -->
                 <Label Text="Santiago Panchi" 
                        FontSize="32" 
                        FontAttributes="Bold" 
@@ -33,7 +25,6 @@
                        TextColor="White" />
             </StackLayout>
 
-            <!-- Description -->
             <StackLayout Padding="20" HorizontalOptions="Center">
                 <Label Text="¡Hola! Soy Santiago Panchi, un apasionado desarrollador de Ecuador. Me especializo en la creación de aplicaciones móviles y soluciones de software. Mi objetivo es crear aplicaciones que mejoren la vida de las personas y hagan que la tecnología sea más accesible." 
                        FontSize="16" 
@@ -42,7 +33,6 @@
                        LineBreakMode="WordWrap" />
             </StackLayout>
 
-            <!-- Button to learn more -->
             <StackLayout Padding="20" HorizontalOptions="Center">
                 <Button Text="Learn more about me..." 
                         BackgroundColor="#007ACC" 
