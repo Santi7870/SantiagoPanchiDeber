@@ -10,7 +10,7 @@ namespace SantiagoPanchi.Models
     {
         public string Title => AppInfo.Name;
         public string Version => AppInfo.VersionString;
-        public string MoreInfoUrl => "https://aka.ms/maui";
+        public string MoreInfoUrl => "https://www.linkedin.com/in/santiago-panchi-3627ab33b/";
         public string Message => "This app is written in XAML and C# with .NET MAUI.";
     }
 }

@@ -2,20 +2,45 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SantiagoPanchi.Views.NotePage"
-             Title="NotePage">
-    <VerticalStackLayout Spacing="10" Margin="5">
+             Title="NotePage"
+             BackgroundColor="Black">
+
+    <VerticalStackLayout Spacing="20" Margin="20">
+
+        <!-- Note Editor -->
         <Editor x:Name="TextEditor"
                 Placeholder="Enter your note"
                 Text="{Binding Text}"
-                HeightRequest="100" />
+                HeightRequest="150"
+                BackgroundColor="#f0f0f0"
 
-        <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
+                FontSize="16"
+                TextColor="Black"
+                PlaceholderColor="Silver" />
+
+        <!-- Grid for buttons -->
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+
+            <!-- Save Button -->
             <Button Text="Save"
+                    Grid.Column="0"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontSize="16"
+                    CornerRadius="10"
+                    Padding="10"
                     Clicked="SaveButton_Clicked" />
 
-            <Button Grid.Column="1"
-                    Text="Delete"
+            <!-- Delete Button -->
+            <Button Text="Delete"
+                    Grid.Column="1"
+                    BackgroundColor="Silver"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="10"
+                    Padding="10"
                     Clicked="DeleteButton_Clicked" />
+
         </Grid>
     </VerticalStackLayout>
 

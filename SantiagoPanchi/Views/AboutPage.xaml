@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                          xmlns:models="clr-namespace:SantiagoPanchi.Models"
+             xmlns:models="clr-namespace:SantiagoPanchi.Models"
+             x:Class="SantiagoPanchi.Views.AboutPage"
+             BackgroundColor="Black">
 
-             x:Class="SantiagoPanchi.Views.AboutPage">
     <ContentPage.BindingContext>
         <models:About />
     </ContentPage.BindingContext>
-    <VerticalStackLayout Spacing="10" Margin="10">
-        <HorizontalStackLayout Spacing="10">
-            <Image Source="dotnet_bot.png"
-                   SemanticProperties.Description="The dot net bot waving hello!"
-                   HeightRequest="64" />
-            <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="End" />
-            <Label FontSize="22" Text="{Binding Version}" VerticalOptions="End" />
-        </HorizontalStackLayout>
 
-        <Label Text="{Binding Message}" />
-        <Button Text="Learn more..." Clicked="LearnMore_Clicked" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Margin="0" HorizontalOptions="Center">
+
+            <!-- Header: Profile Icon and Name -->
+            <StackLayout HorizontalOptions="Center" Spacing="10">
+                <!-- Profile Image -->
+                <Image Source="profile_icon.jpg"
+                       HeightRequest="120"
+                       WidthRequest="120"
+                       Aspect="AspectFill"
+                       HorizontalOptions="Center" />
+
+                <!-- Name and Title -->
+                <Label Text="Santiago Panchi" 
+                       FontSize="32" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       TextColor="White" />
+                <Label Text="Software Developer | Mobile Apps Enthusiast"
+                       FontSize="18" 
+                       HorizontalOptions="Center" 
+                       TextColor="White" />
+            </StackLayout>
+
+            <!-- Description -->
+            <StackLayout Padding="20" HorizontalOptions="Center">
+                <Label Text="¡Hola! Soy Santiago Panchi, un apasionado desarrollador de Ecuador. Me especializo en la creación de aplicaciones móviles y soluciones de software. Mi objetivo es crear aplicaciones que mejoren la vida de las personas y hagan que la tecnología sea más accesible." 
+                       FontSize="16" 
+                       HorizontalOptions="Center" 
+                       TextColor="White" 
+                       LineBreakMode="WordWrap" />
+            </StackLayout>
+
+            <!-- Button to learn more -->
+            <StackLayout Padding="20" HorizontalOptions="Center">
+                <Button Text="Learn more about me..." 
+                        BackgroundColor="#007ACC" 
+                        TextColor="White" 
+                        FontSize="16" 
+                        CornerRadius="10" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="Center" 
+                        Clicked="LearnMore_Clicked" />
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
+
