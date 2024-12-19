@@ -1,51 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:SantiagoPanchi.Models"
+             xmlns:viewModels="clr-namespace:SantiagoPanchi.ViewModels"
              x:Class="SantiagoPanchi.Views.AboutPage"
-             BackgroundColor="Black">
-
+             BackgroundColor="#1e1e2f">
     <ContentPage.BindingContext>
-        <models:About />
+        <viewModels:SPAboutViewModel />
     </ContentPage.BindingContext>
 
-    <ScrollView>
-        <VerticalStackLayout Spacing="20" Margin="0" HorizontalOptions="Center">
+    <VerticalStackLayout Spacing="20" Padding="20" VerticalOptions="CenterAndExpand">
+        <!-- Name Section -->
+        <Label x:Name="SPTitleLabel" 
+               FontSize="24" 
+               FontAttributes="Bold" 
+               Text="{Binding Title}" 
+               TextColor="#ff6f61" 
+               HorizontalTextAlignment="Center" />
+        <Label x:Name="SPVersionLabel" 
+               FontSize="16" 
+               Text="{Binding Version}" 
+               TextColor="#ffffff" 
+               HorizontalTextAlignment="Center" />
 
-            <StackLayout HorizontalOptions="Center" Spacing="10">
+        <!-- Image Section -->
+        <Image x:Name="SPImage" 
+               Source="profile_icon.jpg"
+               SemanticProperties.Description="The dot net bot waving hello!"
+               HeightRequest="120"
+               WidthRequest="120"
+               Aspect="AspectFit"
+               HorizontalOptions="Center" />
 
-                <Label Text="Santiago Panchi" 
-                       FontSize="32" 
-                       FontAttributes="Bold" 
-                       HorizontalOptions="Center" 
-                       TextColor="White" />
-                <Label Text="Software Developer | Mobile Apps Enthusiast"
-                       FontSize="18" 
-                       HorizontalOptions="Center" 
-                       TextColor="White" />
-            </StackLayout>
+        <!-- Message Section -->
+        <Label x:Name="SPMessageLabel" 
+               Text="{Binding Message}" 
+               FontSize="18" 
+               TextColor="#d4d4d8" 
+               HorizontalTextAlignment="Center" 
+               Padding="10" />
 
-            <StackLayout Padding="20" HorizontalOptions="Center">
-                <Label Text="¡Hola! Soy Santiago Panchi, un apasionado desarrollador de Ecuador. Me especializo en la creación de aplicaciones móviles y soluciones de software. Mi objetivo es crear aplicaciones que mejoren la vida de las personas y hagan que la tecnología sea más accesible." 
-                       FontSize="16" 
-                       HorizontalOptions="Center" 
-                       TextColor="White" 
-                       LineBreakMode="WordWrap" />
-            </StackLayout>
-
-            <StackLayout Padding="20" HorizontalOptions="Center">
-                <Button Text="Learn more about me..." 
-                        BackgroundColor="#007ACC" 
-                        TextColor="White" 
-                        FontSize="16" 
-                        CornerRadius="10" 
-                        HorizontalOptions="Center" 
-                        VerticalOptions="Center" 
-                        Clicked="LearnMore_Clicked" />
-            </StackLayout>
-
-        </VerticalStackLayout>
-    </ScrollView>
+        <!-- Action Button -->
+        <Button x:Name="SPLearnMoreButton"
+                Text="Learn more..." 
+                Command="{Binding ShowMoreInfoCommand}" 
+                BackgroundColor="#ff6f61"
+                TextColor="White" 
+                CornerRadius="10"
+                Padding="10" 
+                FontAttributes="Bold" />
+    </VerticalStackLayout>
 
 </ContentPage>
+
+
 

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:SantiagoPanchi.ViewModels"
              x:Class="SantiagoPanchi.Views.NotePage"
-             Title="NotePage"
-             BackgroundColor="Black">
+             Title="Note"
+             BackgroundColor="#2C3E50">
 
-    <VerticalStackLayout Spacing="20" Margin="20">
+    <ContentPage.BindingContext>
+        <viewModels:SPNoteViewModel />
+    </ContentPage.BindingContext>
 
-        <Editor x:Name="TextEditor"
+    <VerticalStackLayout Spacing="20" Margin="15">
+        <!-- Editor for note text -->
+        <Editor x:Name="SPTextEditor"
                 Placeholder="Enter your note"
                 Text="{Binding Text}"
                 HeightRequest="150"
-                BackgroundColor="#f0f0f0"
+                BackgroundColor="#34495E"
+                TextColor="White"
+                FontSize="16"/>
 
-                FontSize="16"
-                TextColor="Black"
-                PlaceholderColor="Silver" />
-
-        <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
-
+        <!-- Button Grid Layout -->
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+            <!-- Save Button -->
             <Button Text="Save"
-                    Grid.Column="0"
-                    BackgroundColor="White"
-                    TextColor="Black"
-                    FontSize="16"
-                    CornerRadius="10"
-                    Padding="10"
-                    Clicked="SaveButton_Clicked" />
-
-            <Button Text="Delete"
-                    Grid.Column="1"
-                    BackgroundColor="Silver"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="#1ABC9C"
                     TextColor="White"
-                    FontSize="16"
-                    CornerRadius="10"
                     Padding="10"
-                    Clicked="DeleteButton_Clicked" />
+                    VerticalOptions="Center" />
 
+            <!-- Delete Button -->
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Command="{Binding DeleteCommand}"
+                    BackgroundColor="#E74C3C"
+                    TextColor="White"
+                    Padding="10"
+                    VerticalOptions="Center" />
         </Grid>
     </VerticalStackLayout>
-
 </ContentPage>
